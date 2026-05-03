@@ -1,5 +1,9 @@
 # Firebase Image Captioning Lab
 
+Họ tên: Chu Bảo Minh
+MSSV: 24120379
+Lớp TDTT: 24CTT3
+
 ## 1. Mô tả
 - **Backend**: FastAPI + Firebase Auth + Firestore + Hugging Face BLIP
 - **Frontend**: React + TypeScript + Vite + Tailwind
@@ -157,3 +161,6 @@ pytest test_api.py -v
 Lưu ý:
 - Muốn test conversation/auth đầy đủ thì Firebase phải được cấu hình đúng.
 - Test file hiện tại chỉ smoke-test các endpoint public.
+
+## 10. Link Video Demo
+[VIDEO DEMO](https://youtu.be/YU10mf2aBUI)
