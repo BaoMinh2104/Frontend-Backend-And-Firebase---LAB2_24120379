@@ -1,9 +1,6 @@
 # Firebase Image Captioning Lab
 
 ## 1. Mô tả
-
-Đây là project full-stack có cấu trúc tương tự repo LAB2 cũ:
-
 - **Backend**: FastAPI + Firebase Auth + Firestore + Hugging Face BLIP
 - **Frontend**: React + TypeScript + Vite + Tailwind
 - **Chức năng chính**:
@@ -13,8 +10,12 @@
   - Upload ảnh + nhập prompt tùy chọn
   - Sinh caption bằng model `Salesforce/blip-image-captioning-large`
   - Lưu lịch sử caption vào Firestore theo từng user
+## 2. Model caption
+```text
+Salesforce/blip-image-captioning-large
+```
 
-## 2. Cấu trúc thư mục
+## 3. Cấu trúc thư mục
 
 ```text
 image_captioning_firebase_lab/
@@ -53,7 +54,7 @@ image_captioning_firebase_lab/
 └─ test_api.py
 ```
 
-## 3. Tạo Firebase mới cho project
+## 4. Tạo Firebase mới cho project
 
 ### Bước 1: Tạo project Firebase
 - Vào Firebase Console
@@ -90,7 +91,7 @@ Rồi copy nội dung từ:
 
 và điền thông tin Firebase / Google OAuth của bạn.
 
-## 4. Cài đặt backend
+## 5. Cài đặt backend
 
 ```bash
 python -m venv .venv
@@ -106,7 +107,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## 5. Chạy backend
+## 6. Chạy backend
 
 ```bash
 uvicorn backend.app.main:app --reload
@@ -130,78 +131,21 @@ Health check:
 http://127.0.0.1:8000/health
 ```
 
-## 6. Cài đặt frontend
-
+## 7. Cài đặt frontend
 ```bash
 cd frontend
 npm install
 ```
-
-Nếu frontend cần gọi backend ở URL khác mặc định, tạo:
-
-```text
-frontend/.env.local
-```
-
-với nội dung:
-
-```text
-VITE_API_BASE_URL=http://127.0.0.1:8000
-```
-
-## 7. Chạy frontend
-
+## 8. Chạy frontend
 ```bash
 cd frontend
 npm run dev
 ```
-
 Frontend mặc định chạy tại:
-
 ```text
 http://127.0.0.1:5173
 ```
-
-## 8. Dữ liệu Firestore mà project dùng
-
-Project sẽ tự tạo dữ liệu theo cấu trúc:
-
-```text
-users/{uid}
-users/{uid}/conversations/{conversation_id}
-users/{uid}/conversations/{conversation_id}/messages/{message_id}
-```
-
-Mỗi `message` ở project này là một lần caption ảnh, gồm:
-- `filename`
-- `content_type`
-- `prompt`
-- `caption`
-- `thumbnail_data_url`
-- `created_at`
-
-## 9. Model caption
-
-Mặc định project dùng:
-
-```text
-Salesforce/blip-image-captioning-large
-```
-
-Bạn cũng có thể đổi sang đường dẫn local model bằng cách sửa phần `[caption_model]` trong `.streamlit/secrets.toml`.
-
-## 10. Gợi ý nếu model tải chậm
-
-Bạn có thể cấu hình local model path trong secret:
-
-```toml
-[caption_model]
-model_name = "D:/hf_models/blip-image-captioning-large"
-cache_dir = "D:/hf_cache"
-local_files_only = true
-```
-
-## 11. Test API
+## 9. Test API
 
 ```bash
 pytest test_api.py -v
