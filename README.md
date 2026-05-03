@@ -10,11 +10,14 @@
   - Upload ảnh + nhập prompt tùy chọn
   - Sinh caption bằng model `Salesforce/blip-image-captioning-large`
   - Lưu lịch sử caption vào Firestore theo từng user
-## 2. Model caption
+## 2. Model caption và yêu cầu
+-  **Model:**
 ```text
 Salesforce/blip-image-captioning-large
 ```
-
+- **Yêu cầu:**
+- Python 3.11 trở lên
+- Node JS
 ## 3. Cấu trúc thư mục
 
 ```text
