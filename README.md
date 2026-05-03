@@ -1,8 +1,8 @@
 # Firebase Image Captioning Lab
 
-Họ tên: Chu Bảo Minh
-MSSV: 24120379
-Lớp TDTT: 24CTT3
+- Họ tên: Chu Bảo Minh
+- MSSV: 24120379
+- Lớp TDTT: 24CTT3
 
 ## 1. Mô tả
 - **Backend**: FastAPI + Firebase Auth + Firestore + Hugging Face BLIP
